@@ -1,0 +1,160 @@
+[
+    {
+        "id": "3f2df505-7510-4ff3-86de-8c69e1ce4f75",
+        "data": "2025-01-06T15:39:45.673761",
+        "sentenca": "**SENTENÇA**\n\n**Processo n° 000000-00.2022.5.04.0000**\n\n**Autor: [Nome do Autor]**\n\n**Ré: [Nome da Ré]**\n\n**Juiz (a) do Trabalho:** [Nome do Juiz (a)]\n\n**Vistos, etc.**\n\n**Considerando:**\n\n* O art. 557 do CPC e os princípios da simplicidade e celeridade processuais, proferi esta *sentença em forma simplificada*, fundamentada no que segue:\n\n**1. RELATÓRIO**\n\nTrata-se de ação trabalhista ajuizada por [Nome do Autor] em face de [Nome da Ré], na qual o Autor postula:\n\na) A concessão da assistência judiciária gratuita;\nb) O reconhecimento da responsabilidade da Ré pelo dano moral causado com a condenação na reparação moral no importe de R$ 10.000,00;\nc) O reconhecimento da responsabilidade da Ré pela perda de uma chance no importe de R$ 7.000,00;\nd) A condenação ao pagamento dos honorários de sucumbência (15%) conforme fundamentação no importe de R$ 2.550 ,00.\n\nA Ré apresentou defesa, impugnando os pedidos formulados pelo Autor.\n\nNão houve produção de provas.\n\nÉ o relatório.\n\n**2. FUNDAMENTAÇÃO**\n\n**2.1. Assistência judiciária gratuita**\n\nPreenchidos os requisitos legais, defiro o pedido de assistência judiciária gratuita ao Autor.\n\n**2.2. Responsabilidade da Ré por dano moral**\n\nO Autor alega que sofreu dano moral em razão da condenação da Ré na ação anterior. No entanto, não há nos autos qualquer prova que demonstre o nexo causal entre a condenação da Ré e o alegado dano moral sofrido pelo Autor.\n\nAdemais, não há na legislação vigente qualquer dispositivo que preveja a responsabilidade civil da Ré por dano moral decorrente de condenação em ação judicial.\n\nAssim, julgo improcedente o pedido de reconhecimento da responsabilidade da Ré pelo dano moral.\n\n**2.3. Responsabilidade da Ré pela perda de uma chance**\n\nO Autor alega que sofreu perda de uma chance em razão da condenação da Ré na ação anterior. No entanto, não há nos autos qualquer prova que demonstre que a condenação da Ré tenha impedido o Autor de obter o emprego que almejava.\n\nAlém disso, o conceito de perda de uma chance não é aplicável ao caso em tela, pois não há elementos que indiquem que o Autor tinha uma expectativa legítima e razoável de obtenção do emprego.\n\nAssim, julgo improcedente o pedido de reconhecimento da responsabilidade da Ré pela perda de uma chance.\n\n**2.4. Honorários de sucumbência**\n\nSucumbente o Autor em todos os pedidos formulados, condeno-o ao pagamento das custas processuais e honorários advocatícios em favor da Ré, no percentual de 15% (quinze por cento) sobre o valor da causa, conforme art. 791-A da CLT.\n\n**3. DISPOSITIVO**\n\n**Ante o exposto, JULGO PARCIALMENTE PROCEDENTE** a ação ajuizada por [Nome do Autor] em face de [Nome da Ré], nos termos da fundamentação supra, para:\n\n**A)** Conceder ao Autor o benefício da assistência judiciária gratuita;\n\n**B)** Julgar improcedentes os pedidos de:\n\n- Reconhecimento da responsabilidade da Ré pelo dano moral;\n- Reconhecimento da responsabilidade da Ré pela perda de uma chance;\n\n**C)** Condenar o Autor ao pagamento das custas processuais e honorários advocatícios em favor da Ré, no percentual de 15% (quinze por cento) sobre o valor da causa.\n\n*Publique-se. Intimem-se.*\n\n[Local], [Data]\n\n[Assinatura do Juiz (a)]",
+        "metadata": {
+            "ai_choice": "Gemini",
+            "model": "claude-3-5-haiku-latest",
+            "pedidos": [
+                {
+                    "pedido": "a) Benefício da assistência judiciária gratuita",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "b) Reconhecimento da responsabilidade da Ré pelo dano moral causado com a condenação na reparação moral no importe de R$ 10.000,00 (dez mil reais).",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "c) Reconhecimento da responsabilidade da Ré pela perda de uma chance no importe de R$ 7.000,00 (sete mil reais)",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "d) Condenação ao pagamento dos honorários de sucumbência (15%) conforme fundamentação no importe de R$ 2.550 ,00 (dois mil, quinhentos e cinquenta reais).",
+                    "decisao": "Procedente (Reclamada)",
+                    "incluir": true,
+                    "artigos": []
+                }
+            ]
+        }
+    },
+    {
+        "id": "7730e86b-6c23-4f4d-9b8c-66e6a1190528",
+        "data": "2025-01-06T15:43:57.430869",
+        "sentenca": "**SENTENÇA**\n\n**Processo nº:** 0000000-00.2023.5.02.0088\n\n**Reclamante:** Fulano de Tal\n\n**Reclamada:** Empresa X\n\n**Juiz(a) do Trabalho:** <Nome do(a) juiz(a)>\n\n**I - RELATÓRIO**\n\nTrata-se de ação trabalhista ajuizada por Fulano de Tal em face de Empresa X, na qual o reclamante pleiteia:\n\na) Benefício da assistência judiciária gratuita;\nb) Reconhecimento da responsabilidade da ré pelo dano moral causado com a condenação na reparação moral no importe de R$ 10.000,00 (dez mil reais);\nc) Reconhecimento da responsabilidade da ré pela perda de uma chance no importe de R$ 7.000,00 (sete mil reais);\nd) Condenação ao pagamento dos honorários de sucumbência (15%) conforme fundamentação no importe de R$ 2.550 ,00 (dois mil, quinhentos e cinquenta reais).\n\nA ré apresentou contestação, impugnando os pedidos formulados na inicial.\n\nRealizada audiência de instrução e julgamento, foi colhido o depoimento pessoal das partes e ouvidas duas testemunhas arroladas pela reclamada.\n\nÉ o relatório.\n\n**II - FUNDAMENTAÇÃO**\n\n**A) Benefício da Assistência Judiciária Gratuita**\n\nPreenchidos os requisitos do art. 790, § 3º, da CLT, defiro ao reclamante os benefícios da assistência judiciária gratuita.\n\n**B) Dano Moral**\n\nO dano moral, nos termos da jurisprudência pacífica do Tribunal Superior do Trabalho, caracteriza-se por uma lesão aos direitos da personalidade do trabalhador, extrapolando a esfera meramente patrimonial.\n\nNa hipótese em tela, não vislumbro a ocorrência do dano moral alegado pelo reclamante, uma vez que a condenação em reparação moral decorreu de ato ilícito praticado pelo próprio reclamante, e não de qualquer conduta ilícita da ré.\n\nAssim, julgo improcedente o pedido de condenação da ré ao pagamento de indenização por dano moral.\n\n**C) Perda de uma Chance**\n\nA perda de uma chance, por sua vez, caracteriza-se pela frustração de uma legítima expectativa de obtenção de uma vantagem econômica ou profissional.\n\nNo caso em análise, não restou demonstrada a existência de qualquer ato ilícito da ré que tenha frustrado legítima expectativa do reclamante quanto à obtenção de um novo emprego. Portanto, julgo improcedente o pedido de condenação da ré ao pagamento de indenização por perda de uma chance.\n\n**D) Honorários de Sucumbência**\n\nNos termos do art. 791-A da CLT, o juiz poderá condenar o vencido ao pagamento de honorários advocatícios, desde que presentes os requisitos nele previstos.\n\nNa hipótese dos autos, o reclamante não logrou êxito em seus pedidos, enquanto a ré restou vencedora em todas as pretensões formuladas na inicial. Portanto, condeno o reclamante ao pagamento de honorários de sucumbência, fixados em 15% sobre o valor da causa, em favor da ré.\n\n**III - DISPOSITIVO**\n\nAnte o exposto, julgo **PROCEDENTE** em parte a ação trabalhista ajuizada por Fulano de Tal em face de Empresa X.\n\nCondeno o reclamante ao pagamento de honorários de sucumbência, fixados em 15% sobre o valor da causa, em favor da ré.\n\nCustas pelo reclamante, no importe de R$ 202,80, calculadas sobre R$ 10.140,00, valor atribuído à causa.\n\nPublique-se. Registre-se. Intimem-se as partes.\n\n<Cidade>, <data>.\n\n**<Nome do(a) Juiz(a)>**\nJuiz(a) do Trabalho da <Vara>ª Vara do Trabalho de <Cidade>",
+        "metadata": {
+            "ai_choice": "Gemini",
+            "model": "claude-3-5-haiku-latest",
+            "pedidos": [
+                {
+                    "pedido": "a) Benefício da assistência judiciária gratuita",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "b) Reconhecimento da responsabilidade da Ré pelo dano moral causado com a condenação na reparação moral no importe de R$ 10.000,00 (dez mil reais).",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "c) Reconhecimento da responsabilidade da Ré pela perda de uma chance no importe de R$ 7.000,00 (sete mil reais)",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "d) Condenação ao pagamento dos honorários de sucumbência (15%) conforme fundamentação no importe de R$ 2.550 ,00 (dois mil, quinhentos e cinquenta reais).",
+                    "decisao": "Procedente (Reclamada)",
+                    "incluir": true,
+                    "artigos": []
+                }
+            ]
+        }
+    },
+    {
+        "id": "cf0461e4-f1e7-4409-9f71-9afdb9dc05dc",
+        "data": "2025-01-06T16:19:29.573288",
+        "sentenca": "**SENTENÇA**\n\n**Processo nº:** **ebf377bd-1078-4d9b-8465-88432a57eaf4**\n\n**Autor:** **[nome do rte.]**\n\n**Ré:** **[nome da rda.]**\n\n**Vistos e etc.**\n\n**SENTENÇA**\n\n1. **Relatório**\n\nO reclamante ajuizou ação trabalhista em face da reclamada, alegando, em síntese, responsabilidade da reclamada por dano moral e perda de uma chance em virtude de condenação em reparação moral anterior.\n\nA reclamada apresentou defesa escrita, contestando integralmente os pedidos do reclamante.\n\n**2. Fundamentação**\n\n**2.1. Assistência Judiciária Gratuita**\n\nO reclamante requer a concessão do benefício da assistência judiciária gratuita. Juntou aos autos declaração de hipossuficiência, nos termos da Lei 7.115/83.\n\nA reclamada não se manifestou sobre o pedido, restando incontroversa a hipossuficiência do reclamante.\n\n**Ante o exposto, CONCEDO ao reclamante o benefício da assistência judiciária gratuita.**\n\n**2.2. Responsabilidade civil por dano moral e perda de uma chance**\n\nO reclamante pretende que a reclamada seja condenada a reparar o dano moral e a perda de uma chance supostamente decorrentes da condenação na ação anterior.\n\nQuanto ao dano moral, o reclamante não demonstrou a ocorrência de qualquer prejuízo extrapatrimonial que possa ser imputado à reclamada. O fato de ter sido condenado em reparação moral não é, por si só, suficiente para caracterizar dano moral indenizável.\n\n**Portanto, JULGO IMPROCEDENTE o pedido de reconhecimento da responsabilidade da reclamada pelo dano moral.**\n\nNo que tange à perda de uma chance, o reclamante não comprovou a existência de uma oportunidade real e concreta de obtenção de ganhos patrimoniais que tenha sido perdida em razão da condenação na ação anterior.\n\n**Logo, JULGO IMPROCEDENTE o pedido de reconhecimento da responsabilidade da reclamada pela perda de uma chance.**\n\n**2.3. Honorários de sucumbência**\n\nConsiderando a improcedência dos pedidos do reclamante, condeno-o ao pagamento dos honorários de sucumbência, fixados em 15% sobre o valor da causa, nos termos do art. 791-A da CLT.\n\n**Dispositivo**\n\nPelo exposto, **JULGO IMPROCEDENTES** os pedidos do reclamante apresentados na inicial.\n\n**Concedo ao reclamante o benefício da assistência judiciária gratuita.**\n\n**Condeno o reclamante ao pagamento dos honorários de sucumbência, fixados em 15% sobre o valor da causa.**\n\nCustas pelo reclamante, dispensadas em razão da AJG.\n\nCumpra-se.\n\n[Local], [dia] de [mês] de [ano].\n\n**[Nome do Juiz(a)]**\n\n**Juiz(a) do Trabalho Titular**",
+        "metadata": {
+            "ai_choice": "Gemini",
+            "model": "claude-3-5-sonnet-latest",
+            "pedidos": [
+                {
+                    "pedido": "a) Benefício da assistência judiciária gratuita",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "b) Reconhecimento da responsabilidade da Ré pelo dano moral causado com a condenação na reparação moral no importe de R$ 10.000,00 (dez mil reais).",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "c) Reconhecimento da responsabilidade da Ré pela perda de uma chance no importe de R$ 7.000,00 (sete mil reais)",
+                    "decisao": "Improcedente",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "d) Condenação ao pagamento dos honorários de sucumbência (15%) conforme fundamentação no importe de R$ 2.550 ,00 (dois mil, quinhentos e cinquenta reais).",
+                    "decisao": "Procedente (Reclamada)",
+                    "incluir": true,
+                    "artigos": []
+                }
+            ]
+        }
+    },
+    {
+        "id": "ab7043ff-8118-4d25-a902-6bb58f2e2b0e",
+        "data": "2025-01-06T16:28:12.169851",
+        "sentenca": "**SENTENÇA**\n\n**Processo nº:** 4c8079dd-59c1-4179-a4a4-45529a9839f2\n\n**1. RELATÓRIO**\n\nTrata-se de ação trabalhista ajuizada por **[nome rte.]** em face de **[nome rda.]**, objetivando o pagamento de diversas verbas trabalhistas.\n\nA empregadora apresentou defesa, pugnando pela improcedência dos pedidos.\n\nSem êxito às tentativas de conciliação, após o prosseguimento do feito, foram produzidas as provas orais e documentais constantes dos autos.\n\nVieram os autos conclusos para sentença.\n\n**2. FUNDAMENTAÇÃO**\n\n**2.1. Justiça Gratuita**\n\nO autor pleiteia a concessão dos benefícios da justiça gratuita. Conforme dispõe o artigo 790, § 3º, da CLT, a concessão do benefício é cabível àqueles que perceberem salário igual ou inferior a 40% (quarenta por cento) do limite máximo dos benefícios do Regime Geral de Previdência Social.\n\nNo caso em apreço, consta dos autos declaração de pobreza firmada pelo autor (fls. ___), razão pela qual é concedida a assistência judiciária gratuita.\n\n**2.2. Horas Extras**\n\nO autor alega que laborava além da jornada regular, sem o pagamento das respectivas horas extras.\n\nA ré, em defesa, nega a ocorrência de horas extras. Argumenta que o autor não cumpriu jornada extraordinária além da legalmente prevista.\n\nContudo, a prova testemunhal produzida em Juízo, aliada aos documentos juntados aos autos (fls. ___), demonstram que o autor laborava habitualmente além da jornada regular, sem o pagamento das horas extras.\n\nDesse modo, resta evidenciado o direito do autor ao pagamento das horas extras trabalhadas, as quais devem ser apuradas em liquidação de sentença.\n\n**2.3. Multa do Artigo 477 da CLT**\n\nO autor requer o pagamento da multa prevista no artigo 477 da CLT, por atraso no pagamento das verbas rescisórias.\n\nA ré reconhece a mora, mas argumenta que o atraso foi justificado por razões financeiras.\n\nNo entanto, o artigo 477 da CLT é de caráter cogente e não admite justificativas para o atraso no pagamento das verbas rescisórias.\n\nAssim, reconhece-se o direito do autor à multa prevista no artigo 477 da CLT, a qual deverá ser apurada em liquidação de sentença.\n\n**2.4. Honorários Advocatícios**\n\nConsiderando o êxito do autor na presente ação, condena-se a ré ao pagamento de honorários advocatícios, fixados em 15% (quinze por cento) sobre o valor da condenação, nos termos do artigo 791-A, § 2º, da CLT.\n\n**3. DISPOSITIVO**\n\n**Ante o exposto, julgo PROCEDENTES os pedidos formulados por:**\n\n**[nome rte.]**\n\nem face de **[nome rda.]**, e a condeno ao pagamento das seguintes verbas:\n\na) horas extras;\nb) multa do artigo 477 da CLT;\nc) honorários advocatícios no importe de 15% (quinze por cento) sobre o valor da condenação.\n\nConcedo ao autor os benefícios da justiça gratuita.\n\nCustas pela ré no importe de _____.\n\nPublique-se. Registre-se. Intimem-se as partes.\n\n[Local], [data]\n\n**[Nome do Juiz]**\nJuiz do Trabalho",
+        "metadata": {
+            "ai_choice": "Gemini",
+            "model": "claude-v1",
+            "pedidos": [
+                {
+                    "pedido": "1. Determinação de que as notificações sejam expedidas apenas com a abreviatura do nome e sobrenome da reclamante;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": false,
+                    "artigos": []
+                },
+                {
+                    "pedido": "2. Possibilidade de apresentação de pedidos de forma genérica, para fins de arbitramento aproximado do valor atribuído à causa;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": false,
+                    "artigos": []
+                },
+                {
+                    "pedido": "3. Concessão de todos os benefícios da justiça gratuita;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "4. Tramitação do processo pelo juízo 100% digital;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": false,
+                    "artigos": []
+                },
+                {
+                    "pedido": "5. Pagamento de horas extras;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "6. Pagamento da multa do artigo 477 da CLT;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                },
+                {
+                    "pedido": "7. Pagamento de honorários advocatícios no valor de 15%;",
+                    "decisao": "Procedente (Autor)",
+                    "incluir": true,
+                    "artigos": []
+                }
+            ]
+        }
+    }
+]

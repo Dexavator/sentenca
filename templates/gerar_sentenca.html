@@ -1,0 +1,36 @@
+<!-- templates/gerar_sentenca.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerar Sentença</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <script>
+        function getCSRFToken() {
+            return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        }
+        // ... qualquer código JavaScript que faça requisições AJAX ...
+    </script>
+</head>
+<body>
+    <h1>Gerar Sentença</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('gerar_sentenca') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}"/>
+        <button type="submit">Gerar Sentença</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('decidir_pedidos') }}">Voltar</a>
+</body>
+</html>

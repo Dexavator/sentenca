@@ -1,0 +1,281 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-container">
+    <!-- Status dos Arquivos -->
+    <div class="files-status-section">
+        <h3>Status dos Arquivos e Configurações</h3>
+        <div class="files-status">
+            <!-- Status da IA -->
+            <div class="file-item">
+                <span class="file-label">IA Extração:</span>
+                {% if session.get('ai_choice_extracao') %}
+                    <span class="file-status success">
+                        {% if session.get('ai_choice_extracao') == 'OpenAI' %}
+                            OpenAI - {{ session.get('openai_model_extracao', 'Modelo não selecionado') }}
+                        {% elif session.get('ai_choice_extracao') == 'Anthropic' %}
+                            Anthropic - {{ session.get('anthropic_model_extracao', 'Modelo não selecionado') }}
+                        {% elif session.get('ai_choice_extracao') == 'Gemini' %}
+                            Gemini - {{ session.get('gemini_model_extracao', 'Modelo não selecionado') }}
+                        {% endif %}
+                    </span>
+                {% else %}
+                    <span class="file-status pending">Não configurado</span>
+                {% endif %}
+            </div>
+
+            <div class="file-item">
+                <span class="file-label">IA Sentença:</span>
+                {% if session.get('ai_choice_sentenca') %}
+                    <span class="file-status success">
+                        {% if session.get('ai_choice_sentenca') == 'OpenAI' %}
+                            OpenAI - {{ session.get('openai_model_sentenca', 'Modelo não selecionado') }}
+                        {% elif session.get('ai_choice_sentenca') == 'Anthropic' %}
+                            Anthropic - {{ session.get('anthropic_model_sentenca', 'Modelo não selecionado') }}
+                        {% elif session.get('ai_choice_sentenca') == 'Gemini' %}
+                            Gemini - {{ session.get('gemini_model_sentenca', 'Modelo não selecionado') }}
+                        {% endif %}
+                    </span>
+                {% else %}
+                    <span class="file-status pending">Não configurado</span>
+                {% endif %}
+            </div>
+
+            <!-- Status do Processo -->
+            <div class="file-item">
+                <span class="file-label">Processo:</span>
+                {% if session.get('processo_text_path') %}
+                    <span class="file-status success">✓ Carregado</span>
+                    <span class="file-name">{{ session.get('processo_text_path').split('/')[-1] }}</span>
+                {% else %}
+                    <span class="file-status pending">Pendente</span>
+                {% endif %}
+            </div>
+            
+            <div class="file-item">
+                <span class="file-label">Sentença Modelo:</span>
+                {% if session.get('sentenca_modelo_path') %}
+                    <span class="file-status success">✓ Carregado</span>
+                    <span class="file-name">{{ session.get('sentenca_modelo_path').split('/')[-1] }}</span>
+                {% else %}
+                    <span class="file-status pending">Opcional - Não carregado</span>
+                {% endif %}
+            </div>
+            
+            <div class="file-item">
+                <span class="file-label">Banco de Decisões:</span>
+                {% if session.get('banco_decisoes_path') %}
+                    <span class="file-status success">✓ Carregado</span>
+                    <span class="file-name">{{ session.get('banco_decisoes_path').split('/')[-1] }}</span>
+                {% else %}
+                    <span class="file-status pending">Opcional - Não carregado</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Manutenção -->
+    <div class="maintenance-card">
+        <form action="{{ url_for('limpar_cache') }}" method="post" onsubmit="return confirm('Isso irá limpar todos os arquivos temporários. Continuar?');">
+            <button type="submit" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash"></i> Limpar Arquivos
+            </button>
+        </form>
+    </div>
+
+    <!-- Seção principal de uploads -->
+    <div class="upload-section">
+        <h2>Carregar Arquivos</h2>
+        
+        <form action="{{ url_for('carregar_todos_arquivos') }}" method="post" enctype="multipart/form-data">
+            <!-- Upload do Processo -->
+            <div class="upload-box">
+                <h3>Processo</h3>
+                <p class="upload-description">Carregue o arquivo do processo em PDF</p>
+                <div class="file-input-group">
+                    <input type="file" name="pdf_file" accept=".pdf" required>
+                    {% if session.get('processo_text_path') %}
+                        <span class="success-mark">✓ Arquivo carregado</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Upload da Sentença Modelo -->
+            <div class="upload-box">
+                <h3>Sentença Modelo</h3>
+                <p class="upload-description">Opcional - Modelo para formatação da sentença</p>
+                <div class="file-input-group">
+                    <input type="file" name="modelo_file" accept=".pdf,.docx,.txt">
+                    {% if session.get('sentenca_modelo_path') %}
+                        <span class="success-mark">✓ Arquivo carregado</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Upload do Banco de Decisões -->
+            <div class="upload-box">
+                <h3>Banco de Decisões</h3>
+                <p class="upload-description">Opcional - Base de decisões anteriores</p>
+                <div class="file-input-group">
+                    <input type="file" name="banco_file" accept=".pdf,.docx,.txt">
+                    {% if session.get('banco_decisoes_path') %}
+                        <span class="success-mark">✓ Arquivo carregado</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Botão de envio único -->
+            <div class="buttons-section">
+                <button type="submit" class="btn btn-primary">Carregar Arquivos</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Configurações avançadas (IA) - Colapsável -->
+    <div class="advanced-settings">
+        <details>
+            <summary>Configurações de IA</summary>
+            <div class="ai-config-section">
+                <form action="{{ url_for('set_ai_config') }}" method="post">
+                    <!-- IA para Extração de Pedidos -->
+                    <div class="ai-config-group">
+                        <h4>IA para Extração de Pedidos</h4>
+                        <div class="form-group">
+                            <label for="ai_choice_extracao">Motor de IA:</label>
+                            <select id="ai_choice_extracao" name="ai_choice_extracao" required>
+                                <option value="OpenAI">OpenAI (GPT)</option>
+                                <option value="Anthropic">Anthropic (Claude)</option>
+                                <option value="Gemini">Google (Gemini)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Modelos mais simples para extração -->
+                        <div id="openai_models_extracao" class="model-select">
+                            <label for="openai_model_extracao">Modelo:</label>
+                            <select id="openai_model_extracao" name="openai_model_extracao">
+                                <option value="gpt-4o-mini">gpt-4o-mini</option>
+                                <option value="gpt-4o">gpt-4o</option>
+                            </select>
+                        </div>
+
+                        <div id="anthropic_models_extracao" class="model-select" style="display: none;">
+                            <label for="anthropic_model_extracao">Modelo:</label>
+                            <select id="anthropic_model_extracao" name="anthropic_model_extracao">
+                                <option value="claude-3-haiku-20240307">Claude 3 Haiku</option>
+                            </select>
+                        </div>
+
+                        <div id="gemini_models_extracao" class="model-select" style="display: none;">
+                            <label for="gemini_model_extracao">Modelo:</label>
+                            <select id="gemini_model_extracao" name="gemini_model_extracao">
+                                <option value="gemini-exp-1206">Gemini Exp 1206</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- IA para Geração de Sentença -->
+                    <div class="ai-config-group">
+                        <h4>IA para Geração de Sentença</h4>
+                        <div class="form-group">
+                            <label for="ai_choice_sentenca">Motor de IA:</label>
+                            <select id="ai_choice_sentenca" name="ai_choice_sentenca" required>
+                                <option value="OpenAI">OpenAI (GPT)</option>
+                                <option value="Anthropic">Anthropic (Claude)</option>
+                                <option value="Gemini">Google (Gemini)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Modelos mais potentes para sentença -->
+                        <div id="openai_models_sentenca" class="model-select">
+                            <label for="openai_model_sentenca">Modelo:</label>
+                            <select id="openai_model_sentenca" name="openai_model_sentenca">
+                                <option value="gpt-4o">GPT-4o</option>
+                                <option value="gpt-4o-mini">GPT-4o-mini</option>
+                                <option value="o1-preview">o1</option>
+                            </select>
+                        </div>
+
+                        <div id="anthropic_models_sentenca" class="model-select" style="display: none;">
+                            <label for="anthropic_model_sentenca">Modelo:</label>
+                            <select id="anthropic_model_sentenca" name="anthropic_model_sentenca">
+                                <option value="claude-3-opus-20240229">Claude 3 Opus</option>
+                                <option value="claude-3-sonnet-20240229">Claude 3 Sonnet</option>
+                            </select>
+                        </div>
+
+                        <div id="gemini_models_sentenca" class="model-select" style="display: none;">
+                            <label for="gemini_model_sentenca">Modelo:</label>
+                            <select id="gemini_model_sentenca" name="gemini_model_sentenca">
+                                <option value="gemini-2.0-flash-exp">Gemini Flash 2.0</option>
+                                <option value="gemini-2.0-flash-thinking-exp-1219">Gemini Thinking 2.0</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Botão único para aplicar todas as configurações -->
+                    <div class="buttons-section">
+                        <button type="submit" class="btn btn-primary">Aplicar Configurações</button>
+                    </div>
+                </form>
+            </div>
+        </details>
+    </div>
+
+    <!-- Botão de continuar -->
+    <div class="continue-section">
+        {% if session.get('processo_text_path') %}
+            <form action="{{ url_for('extrair_pedidos') }}" method="post">
+                <button type="submit" class="btn btn-primary btn-large">
+                    Extrair Pedidos
+                </button>
+            </form>
+        {% else %}
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Carregue um processo para extrair os pedidos
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+// Controle dos modelos de extração
+document.getElementById('ai_choice_extracao').addEventListener('change', function() {
+    const openaiModels = document.getElementById('openai_models_extracao');
+    const anthropicModels = document.getElementById('anthropic_models_extracao');
+    const geminiModels = document.getElementById('gemini_models_extracao');
+    
+    openaiModels.style.display = 'none';
+    anthropicModels.style.display = 'none';
+    geminiModels.style.display = 'none';
+    
+    if (this.value === 'OpenAI') {
+        openaiModels.style.display = 'block';
+    } else if (this.value === 'Anthropic') {
+        anthropicModels.style.display = 'block';
+    } else if (this.value === 'Gemini') {
+        geminiModels.style.display = 'block';
+    }
+});
+
+// Controle dos modelos de sentença
+document.getElementById('ai_choice_sentenca').addEventListener('change', function() {
+    const openaiModels = document.getElementById('openai_models_sentenca');
+    const anthropicModels = document.getElementById('anthropic_models_sentenca');
+    const geminiModels = document.getElementById('gemini_models_sentenca');
+    
+    openaiModels.style.display = 'none';
+    anthropicModels.style.display = 'none';
+    geminiModels.style.display = 'none';
+    
+    if (this.value === 'OpenAI') {
+        openaiModels.style.display = 'block';
+    } else if (this.value === 'Anthropic') {
+        anthropicModels.style.display = 'block';
+    } else if (this.value === 'Gemini') {
+        geminiModels.style.display = 'block';
+    }
+});
+</script>
+{% endblock %}

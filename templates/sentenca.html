@@ -1,0 +1,53 @@
+<!-- templates/sentenca.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-container">
+    <div class="sentenca-container">
+        <div class="sentenca-header">
+            <h2>PODER JUDICIÁRIO</h2>
+            <h3>JUSTIÇA DO TRABALHO</h3>
+            <h4>TRIBUNAL REGIONAL DO TRABALHO DA __ REGIÃO</h4>
+            <h4>__ VARA DO TRABALHO DE _______</h4>
+        </div>
+
+        <div class="processo-info">
+            <p><strong>PROCESSO Nº:</strong> _____________</p>
+            <p><strong>RECLAMANTE:</strong> _____________</p>
+            <p><strong>RECLAMADO:</strong> _____________</p>
+        </div>
+
+        <div class="sentenca-titulo">
+            <h1>SENTENÇA</h1>
+        </div>
+
+        <div class="sentenca-content">
+            {% for paragrafo in sentenca_text.split('\n\n') %}
+                {% if paragrafo.strip() %}
+                    <p>{{ paragrafo | safe }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="sentenca-footer">
+            <p>_______________, {{ now.strftime('%d de %B de %Y') }}</p>
+            <div class="juiz-assinatura">
+                <p>_______________________</p>
+                <p>Juiz(a) do Trabalho</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="export-buttons">
+        <a href="{{ url_for('export_pdf') }}" class="btn btn-primary">
+            <i class="fas fa-file-pdf"></i> Exportar PDF
+        </a>
+        <a href="{{ url_for('export_docx') }}" class="btn btn-primary">
+            <i class="fas fa-file-word"></i> Exportar DOCX
+        </a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+    </div>
+</div>
+{% endblock %}

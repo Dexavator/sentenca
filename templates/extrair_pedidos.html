@@ -1,0 +1,27 @@
+<!-- templates/extrair_pedidos.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-container">
+    <h2>Pedidos Extraídos</h2>
+
+    {% if session.get('pedidos') %}
+        <div class="pedidos-list">
+            <ul>
+                {% for pedido in session.get('pedidos') %}
+                    <li>{{ pedido }}</li>
+                {% endfor %}
+            </ul>
+            <div class="buttons-section">
+                <a href="{{ url_for('decidir_pedidos') }}" class="btn btn-primary">Decidir sobre os Pedidos</a>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-warning">
+            <i class="fas fa-exclamation-triangle"></i>
+            Nenhum pedido extraído. <a href="{{ url_for('index') }}">Voltar para a página inicial</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

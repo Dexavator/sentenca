@@ -1,0 +1,40 @@
+<!-- templates/historico.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histórico de Sentenças</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Histórico de Sentenças Geradas</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% if history %}
+        <ul>
+            {% for entry in history %}
+                <li>
+                    <strong>ID:</strong> {{ entry.id }}<br>
+                    <strong>Data:</strong> {{ entry.data }}<br>
+                    <strong>Sentença:</strong> {{ entry.sentenca[:100] }}...<br>
+                    <a href="{{ url_for('sentenca_final') }}?id={{ entry.id }}">Ver Detalhes</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma sentença gerada ainda.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Início</a>
+</body>
+</html>

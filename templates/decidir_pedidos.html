@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Decidir Pedidos{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Decidir Pedidos</h2>
+    
+    <form action="{{ url_for('decidir_pedidos') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        
+        {% for pedido in pedidos %}
+            <div class="pedido">
+                <h3>Pedido {{ loop.index }}</h3>
+                <p class="pedido-text">{{ pedido }}</p>
+                
+                <div class="form-group">
+                    <label for="decisao_{{ loop.index0 }}">Decisão:</label>
+                    <select 
+                        name="decisao_{{ loop.index0 }}" 
+                        id="decisao_{{ loop.index0 }}" 
+                        onchange="buscarArtigos('{{ pedido | escape }}', this.value, {{ loop.index0 }})">
+                        <option value="Procedente (Autor)">Procedente (Autor)</option>
+                        <option value="Procedente (Reclamada)">Procedente (Reclamada)</option>
+                        <option value="Improcedente">Improcedente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" 
+                               name="incluir_{{ loop.index0 }}" 
+                               id="incluir_{{ loop.index0 }}" 
+                               checked>
+                        <label for="incluir_{{ loop.index0 }}">Incluir na Sentença</label>
+                    </div>
+                </div>
+
+                <div id="artigos_{{ loop.index0 }}" class="artigos-list">
+                    <!-- Artigos serão carregados aqui via AJAX -->
+                </div>
+            </div>
+        {% endfor %}
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Salvar Decisões</button>
+            <a href="{{ url_for('extrair_pedidos') }}" class="btn">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    async function buscarArtigos(pedido, decisao, index) {
+        const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        try {
+            const response = await fetch("{{ url_for('buscar_artigos') }}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': token
+                },
+                body: JSON.stringify({
+                    pedido: pedido,
+                    decisao: decisao
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.status === "success") {
+                const artigosList = document.getElementById(`artigos_${index}`);
+                artigosList.innerHTML = "<h4>Artigos Relacionados:</h4>";
+                
+                data.artigos.forEach(artigo => {
+                    const div = document.createElement("div");
+                    div.className = "checkbox-group";
+                    
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.name = `artigos_selecionados_${index}`;
+                    checkbox.value = artigo;
+                    checkbox.id = `artigo_${index}_${artigo}`;
+                    
+                    const label = document.createElement("label");
+                    label.htmlFor = `artigo_${index}_${artigo}`;
+                    label.textContent = artigo;
+                    
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
+                    artigosList.appendChild(div);
+                });
+            } else {
+                alert("Erro ao buscar artigos: " + data.message);
+            }
+        } catch (error) {
+            console.error("Erro:", error);
+            alert("Erro ao buscar artigos. Verifique o console para mais detalhes.");
+        }
+    }
+</script>
+{% endblock %}
